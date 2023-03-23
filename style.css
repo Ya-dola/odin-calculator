@@ -13,6 +13,7 @@
     --txt-btn: #333;
     --txt-result: #406094;
     --size-heading: 64px;
+    --size-display: 32px;
     --size-button: 20px;
     --size-info: 22px;
 }
@@ -51,6 +52,7 @@ body {
 
 .calcDisplay {
     font-family: VT323, monospace;
+    font-size: var(--size-display);
 }
 
 .footer {
