@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --background: #1a1a1a;
+    --calc-back: #262626;
+    --calc-screen: #404040;
+    --btn-light-blue: #b3e5fc;
+    --btn-pale-pink: #fce4ec;
+    --btn-soft-green: #e8f5e9;
+    --btn-lavender: #e6e6fa;
+    --btn-peach: #ffe0b2;
+    --light-txt: #eaeaea;
+    --txt-btn: #333;
+    --txt-result: #406094;
+    --size-heading: 64px;
+    --size-button: 20px;
+    --size-info: 22px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*Elements*/
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px 0;
+    background: var(--background);
+    color: var(--light-txt);
+    font-family: Lato, sans-serif;
+}
+
+/*Classes*/
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: var(--size-heading);
+    text-align: center;
+}
+
+.calcDisplay {
+    font-family: VT323, monospace;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
