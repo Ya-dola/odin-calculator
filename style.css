@@ -57,7 +57,12 @@ button {
     border-radius: 25%;
     font-size: var(--size-button);
     font-weight: 700;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    /*transform: translate3d(0, -8%, 20px);*/
+    transform: translateY(-8%);
 }
 
 /*Classes*/
@@ -112,6 +117,7 @@ button {
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     grid-gap: 12px 20px;
 }
+
 
 .footer {
     display: flex;
