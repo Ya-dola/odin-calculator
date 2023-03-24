@@ -6,16 +6,16 @@
     --calc-back: #262626;
     --calc-screen: #404040;
 
-    --btn-light-blue: #b3e5fc;
-    --btn-pale-pink: #fce4ec;
-    --btn-soft-green: #e8f5e9;
-    --btn-lavender: #e6e6fa;
-    --btn-peach: #ffe0b2;
+    --btn-blue: #809eff;
+    --btn-green: #98ffbc;
+    --btn-red: #ff8b8b;
+    --btn-orange: #fcb37f;
+    --btn-base: #303030;
 
     --light-txt: #eaeaea;
 
-    --txt-btn: #333;
-    --txt-result: #56c48a;
+    --txt-btn-active: #333;
+    --txt-result: #65f1a6;
 
     --size-heading: 64px;
     --size-display-main: 44px;
@@ -55,14 +55,16 @@ button {
     border: none;
     outline: none;
     border-radius: 25%;
+    background-color: var(--btn-base);
+    color: var(--light-txt);
     font-size: var(--size-button);
     font-weight: 700;
+    box-shadow: 0 0 2px 1px rgba(196, 196, 196, 0.2);
     transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-    /*transform: translate3d(0, -8%, 20px);*/
-    transform: translateY(-8%);
+    transform: translateY(-6%);
 }
 
 /*Classes*/
@@ -118,6 +120,21 @@ button:hover {
     grid-gap: 12px 20px;
 }
 
+.btnNum {
+    color: var(--btn-orange);
+}
+
+.btnOperation {
+    color: var(--btn-red);
+}
+
+.btnSpecial {
+    color: var(--btn-blue);
+}
+
+.btnEquals {
+    color: var(--btn-green);
+}
 
 .footer {
     display: flex;
