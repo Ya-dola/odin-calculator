@@ -2,19 +2,25 @@
 
 :root {
     --background: #1a1a1a;
+
     --calc-back: #262626;
     --calc-screen: #404040;
+
     --btn-light-blue: #b3e5fc;
     --btn-pale-pink: #fce4ec;
     --btn-soft-green: #e8f5e9;
     --btn-lavender: #e6e6fa;
     --btn-peach: #ffe0b2;
+
     --light-txt: #eaeaea;
+
     --txt-btn: #333;
-    --txt-result: #406094;
+    --txt-result: #56c48a;
+
     --size-heading: 64px;
-    --size-display: 32px;
-    --size-button: 20px;
+    --size-display-main: 44px;
+    --size-display-sec: 32px;
+    --size-button: 26px;
     --size-info: 22px;
 }
 
@@ -42,13 +48,16 @@ body {
 }
 
 button {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
     text-decoration: none;
     border: none;
     outline: none;
     border-radius: 25%;
     font-size: var(--size-button);
-    width: 60px;
-    height: 60px;
+    font-weight: 700;
+    transition: all 0.4s ease-in-out;
 }
 
 /*Classes*/
@@ -73,7 +82,10 @@ button {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    width: 300px;
+    padding: 20px 14px;
+    background-color: var(--calc-back);
+    border-radius: 8% 8% 4% 4%;
+    box-shadow: 0 4px 12px 2px rgba(196, 196, 196, 0.3);
 }
 
 .calcDisplay {
@@ -82,15 +94,23 @@ button {
     justify-content: flex-end;
     align-content: flex-end;
     font-family: VT323, monospace;
-    font-size: var(--size-display);
+    font-size: var(--size-display-main);
     text-align: right;
-    width: 100%;
+    width: 380px;
+    padding: 6px 12px;
+    background-color: var(--calc-screen);
+    border-radius: 8px;
+}
+
+.calcDisplay .prevCalculation {
+    font-size: var(--size-display-sec);
+    color: var(--txt-result);
 }
 
 .btnsGrid {
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-    grid-gap: 10px 20px;
+    grid-gap: 12px 20px;
 }
 
 .footer {
