@@ -124,16 +124,38 @@ button:hover {
     color: var(--btn-orange);
 }
 
+.btnNum:hover {
+    background-color: var(--btn-orange);
+    color: var(--txt-btn-active);
+}
+
 .btnOperation {
     color: var(--btn-red);
 }
+
+.btnOperation:hover {
+    background-color: var(--btn-red);
+    color: var(--txt-btn-active);
+}
+
 
 .btnSpecial {
     color: var(--btn-blue);
 }
 
+.btnSpecial:hover {
+    background-color: var(--btn-blue);
+    color: var(--txt-btn-active);
+}
+
+
 .btnEquals {
     color: var(--btn-green);
+}
+
+.btnEquals:hover {
+    background-color: var(--btn-green);
+    color: var(--txt-btn-active);
 }
 
 .footer {
