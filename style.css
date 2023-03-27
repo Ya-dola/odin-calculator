@@ -9,7 +9,8 @@
     --btn-blue: #809eff;
     --btn-green: #98ffbc;
     --btn-red: #ff8b8b;
-    --btn-orange: #fcb37f;
+    --btn-orange: #ffa778;
+    --btn-dola: #ff8266;
     --btn-base: #303030;
 
     --light-txt: #eaeaea;
@@ -65,6 +66,10 @@ button {
 
 button:hover {
     transform: translateY(-6%);
+}
+
+button:active {
+    transform: translateY(7%);
 }
 
 /*Classes*/
@@ -138,6 +143,19 @@ button:hover {
     color: var(--txt-btn-active);
 }
 
+.btnDola {
+    color: var(--btn-dola);
+}
+
+.btnDola:hover {
+    background-color: var(--btn-dola);
+    color: var(--txt-btn-active);
+}
+
+.btnDolaImg {
+    width: 84%;
+    height: auto;
+}
 
 .btnSpecial {
     color: var(--btn-blue);
@@ -147,7 +165,6 @@ button:hover {
     background-color: var(--btn-blue);
     color: var(--txt-btn-active);
 }
-
 
 .btnEquals {
     color: var(--btn-green);
