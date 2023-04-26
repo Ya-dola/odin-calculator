@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 :root {
-    --background: #1a1a1a;
+    --background: #f5a370;
 
     --calc-back: #262626;
     --calc-screen: #404040;
@@ -14,6 +14,7 @@
     --btn-base: #303030;
 
     --light-txt: #eaeaea;
+    --dark-txt: #2a2a2a;
 
     --txt-btn-active: #333;
     --txt-result: #65f1a6;
@@ -44,7 +45,7 @@ body {
     gap: 20px;
     padding: 20px 0;
     background: var(--background);
-    color: var(--light-txt);
+    color: var(--dark-txt);
     font-family: Lato, sans-serif;
 }
 
@@ -97,7 +98,7 @@ button:active {
     padding: 20px 14px;
     background-color: var(--calc-back);
     border-radius: 8% 8% 4% 4%;
-    box-shadow: 0 4px 12px 2px rgba(196, 196, 196, 0.3);
+    box-shadow: 0 4px 12px 2px rgba(31, 31, 31, 0.8);
 }
 
 .calcDisplay {
@@ -117,6 +118,10 @@ button:active {
 .calcDisplay .prevCalculation {
     font-size: var(--size-display-sec);
     color: var(--txt-result);
+}
+
+.calcDisplay .currCalculation {
+    color: var(--light-txt);
 }
 
 .btnsGrid {
