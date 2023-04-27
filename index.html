@@ -15,12 +15,12 @@
         <div class="container">
             <div class="calculator">
                 <div class="calcDisplay">
-                    <div class="prevCalculation">2 + 2</div>
+                    <div class="prevCalculation"></div>
                     <div class="currCalculation">0</div>
                 </div>
                 <div class="btnsGrid">
-                    <button class="btnSpecial">AC</button>
-                    <button class="btnSpecial">C</button>
+                    <button class="btnSpecial" id="clear">AC</button>
+                    <button class="btnSpecial" id="delete">C</button>
                     <button class="btnOperation">%</button>
                     <button class="btnOperation">÷</button>
 
@@ -39,17 +39,17 @@
                     <button class="btnNum">3</button>
                     <button class="btnOperation">+</button>
 
-                    <button class="btnDola">
+                    <button class="btnDola" id="dola">
                         <img class="btnDolaImg" src="dola.png">
                     </button>
                     <button class="btnNum">0</button>
-                    <button class="btnNum">.</button>
-                    <button class="btnEquals">=</button>
+                    <button class="btnSpecial" id="point">.</button>
+                    <button class="btnEquals" id="equals">=</button>
                 </div>
             </div>
         </div>
 
-        <div class="footer" data-number>
+        <div class="footer">
             <div>
                 Copyright &copy; The Odin Project - Aadil Edition
             </div>
