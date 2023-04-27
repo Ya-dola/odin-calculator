@@ -101,7 +101,7 @@ function setOperation(operation) {
     clearCurrCalc = true;
 }
 
-function clear() {
+function clearScreen() {
     prevCalculation.textContent = "";
     currCalculation.textContent = "0";
     var1 = "";
@@ -118,13 +118,13 @@ function calculate() {
     }
 
     var2 = currCalculation.textContent;
-    currCalculation.textContent = roundDp2(operate(var1, var2, operator));
+    currCalculation.textContent = roundDp3(operate(var1, var2, operator));
     prevCalculation.textContent = `${var1} ${operator} ${var2} =`;
 
     operator = null;
 }
 
-function roundDp2(num) {
+function roundDp3(num) {
     return Math.round(num * 1000) / 1000;
 }
 
@@ -133,7 +133,7 @@ function keyInput(evt) {
     if (evt.key === '.') appendPoint();
     if (evt.key === '=' || evt.key === 'Enter') calculate();
     if (evt.key === 'Backspace') deleteNum();
-    if (evt.key === 'Escape') clear();
+    if (evt.key === 'Escape') clearScreen();
     if (evt.key === "+" || evt.key === "-" || evt.key === "*" || evt.key === "/" || evt.key === "%")
         setOperation(convertOperator(evt.key));
 }
@@ -147,6 +147,19 @@ function convertOperator(keyboardOperator) {
 }
 
 // Event Listeners
-window.addEventListener("keydown", keyInput);
-btnPoint.addEventListener('click', appendPoint);
+window.addEventListener('keydown', keyInput);
+
+btnPoint.addEventListener('click touchstart', appendPoint);
+btnClear.addEventListener('click touchstart', clearScreen);
+btnDelete.addEventListener('click touchstart', deleteNum);
+btnEquals.addEventListener('click touchstart', calculate);
+
+btnsNum.forEach((btn) => {
+    btn.addEventListener('click touchstart', () => appendNum(btn.textContent));
+});
+
+btnsOperation.forEach((btn) => {
+    btn.addEventListener('click touchstart', () => setOperation(btn.textContent));
+});
+
 
