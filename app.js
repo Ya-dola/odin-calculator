@@ -149,17 +149,17 @@ function convertOperator(keyboardOperator) {
 // Event Listeners
 window.addEventListener('keydown', keyInput);
 
-btnPoint.addEventListener('click touchstart', appendPoint);
-btnClear.addEventListener('click touchstart', clearScreen);
-btnDelete.addEventListener('click touchstart', deleteNum);
-btnEquals.addEventListener('click touchstart', calculate);
+btnPoint.addEventListener('click', appendPoint);
+btnClear.addEventListener('click', clearScreen);
+btnDelete.addEventListener('click', deleteNum);
+btnEquals.addEventListener('click', calculate);
 
 btnsNum.forEach((btn) => {
-    btn.addEventListener('click touchstart', () => appendNum(btn.textContent));
+    btn.addEventListener('click', () => appendNum(btn.textContent));
 });
 
 btnsOperation.forEach((btn) => {
-    btn.addEventListener('click touchstart', () => setOperation(btn.textContent));
+    btn.addEventListener('click', () => setOperation(btn.textContent));
 });
 
 
