@@ -38,6 +38,27 @@ function modulus(num1, num2) {
     return num1 % num2;
 }
 
+function operate(var1, var2, operator) {
+    var1 = Number(var1);
+    var2 = Number(var2);
+    switch (operator) {
+        case "+":
+            return add(var1, var2);
+        case "-":
+            return subtract(var1, var2);
+        case "x":
+            return multiply(var1, var2);
+        case "÷":
+            if (var2 === 0) return null;
+            else return divide(var1, var2);
+        case "%":
+            if (var2 === 0) return null;
+            else return modulus(var1, var2);
+        default:
+            return null;
+    }
+}
+
 function appendNum(num) {
     if (currCalculation.textContent === "0" || clearCurrCalc) resetCurrCalculation();
 
@@ -70,6 +91,16 @@ function appendPoint() {
     currCalculation.textContent += ".";
 }
 
+function setOperation(operation) {
+    if (operator !== null) calculate();
+
+    var1 = currCalculation.textContent;
+    operator = operation;
+
+    prevCalculation.textContent = `${var1} ${operator}`;
+    clearCurrCalc = true;
+}
+
 function clear() {
     prevCalculation.textContent = "";
     currCalculation.textContent = "0";
@@ -78,14 +109,41 @@ function clear() {
     operator = null;
 }
 
+function calculate() {
+    if (operator === null || clearCurrCalc) return;
+
+    if (operator === "÷" && currCalculation.textContent === "0") {
+        alert("Cannot Divide By 0!");
+        return;
+    }
+
+    var2 = currCalculation.textContent;
+    currCalculation.textContent = roundDp2(operate(var1, var2, operator));
+    prevCalculation.textContent = `${var1} ${operator} ${var2} =`;
+
+    operator = null;
+}
+
+function roundDp2(num) {
+    return Math.round(num * 1000) / 1000;
+}
+
 function keyInput(evt) {
     if (evt.key >= 0 && evt.key <= 9) appendNum(evt.key);
     if (evt.key === '.') appendPoint();
-    if (evt.key === '=' || evt.key === 'Enter') evaluate();
+    if (evt.key === '=' || evt.key === 'Enter') calculate();
     if (evt.key === 'Backspace') deleteNum();
     if (evt.key === 'Escape') clear();
-    if (evt.key === '+' || evt.key === '-' || evt.key === '*' || evt.key === '/')
+    if (evt.key === "+" || evt.key === "-" || evt.key === "*" || evt.key === "/" || evt.key === "%")
         setOperation(convertOperator(evt.key));
+}
+
+function convertOperator(keyboardOperator) {
+    if (keyboardOperator === "+") return "+";
+    if (keyboardOperator === "-") return "−";
+    if (keyboardOperator === "*") return "x";
+    if (keyboardOperator === "/") return "÷";
+    if (keyboardOperator === "%") return "%";
 }
 
 // Event Listeners
